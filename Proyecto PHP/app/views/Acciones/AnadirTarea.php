@@ -4,6 +4,12 @@ if (isset($_SESSION['admin'])) {
     if ($_SESSION['admin'] === 'si') {
         include '../../models/funciones.php';
         ?>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Añadir tarea</title>
+    </head>
+    <body>
         <form action="../../controllers/anadirTarea.php" method="POST">
             <p><label> Id: <input type="text" name="id" value="<?= idUltimoRegistroTarea() + 1 ?>" size="1" readonly /></label></p>
             <p><label> Descripción: <input type="text" name="descripcion"/> </label></p>
@@ -32,6 +38,8 @@ if (isset($_SESSION['admin'])) {
             <p><label> Anotaciones posteriores: <input type="text" name="anotaciones_posteriores"/> </label></p>
             <input type="submit" name="Enviar" value="Enviar"/>
         </form>
+    </body>
+</html>
         <?php
     } else {
         ?>
@@ -42,6 +50,7 @@ if (isset($_SESSION['admin'])) {
 } else {
     header('Location: ../../index.php');
 }
+   
 
 
 

@@ -5,14 +5,25 @@ include 'Conexionbd.php';
 
 function nuevaTarea($id, $descripcion, $persona_contacto, $telefono_contacto, $correo, $direccion, $poblacion, $codigo_postal, $provincia, $estado, $fecha_creacion, $operario_encargado, $fecha_realizacion, $anotaciones_anteriores, $anotaciones_posteriores) {
     $conexion = Conecta();
-    $result = mysqli_query($conexion, "INSERT INTO tareas VALUES ('$id','$descripcion','$persona_contacto','$telefono_contacto','$correo','$direccion','$poblacion','$codigo_postal','$provincia','$estado','$fecha_creacion','$operario_encargado','$fecha_realizacion','$anotaciones_anteriores','$anotaciones_posteriores')") or die('Error, insert query failed');
-    return 'Tarea a�adida correctamenete';
+    $nueva = mysqli_query($conexion, "INSERT INTO tareas VALUES ('$id','$descripcion','$persona_contacto','$telefono_contacto','$correo','$direccion','$poblacion','$codigo_postal','$provincia','$estado','$fecha_creacion','$operario_encargado','$fecha_realizacion','$anotaciones_anteriores','$anotaciones_posteriores')") or die('Error orden insertar tarea');
+    return "Tarea añadida correctamenete";
 }
 
 function editarTarea($id, $descripcion, $persona_contacto, $telefono_contacto, $correo, $direccion, $poblacion, $codigo_postal, $provincia, $estado, $operario_encargado, $fecha_realizacion, $anotaciones_anteriores, $anotaciones_posteriores) {
     $conexion = Conecta();
-    $result = mysqli_query($conexion, "UPDATE tareas SET descripcion='$descripcion',persona_contacto='$persona_contacto',telefono_contacto='$telefono_contacto',correo='$correo',direccion='$direccion',poblacion='$poblacion',codigo_postal='$codigo_postal',provincia='$provincia',estado='$estado',operario_encargado='$operario_encargado',fecha_realizacion='$fecha_realizacion',anotaciones_anteriores='$anotaciones_anteriores',anotaciones_posteriores='$anotaciones_posteriores' WHERE id='$id'");
-    return 'Tarea actualizada correctamenete';
+    $edit = mysqli_query($conexion, "UPDATE tareas SET descripcion='$descripcion',persona_contacto='$persona_contacto',telefono_contacto='$telefono_contacto',correo='$correo',direccion='$direccion',poblacion='$poblacion',codigo_postal='$codigo_postal',provincia='$provincia',estado='$estado',operario_encargado='$operario_encargado',fecha_realizacion='$fecha_realizacion',anotaciones_anteriores='$anotaciones_anteriores',anotaciones_posteriores='$anotaciones_posteriores' WHERE id='$id'") or die ('Eroor orden editar tarea');
+    return "Tarea $id actualizada correctamenete";
+}
+function completarTarea($id,$estado,$anotaciones_anteriores,$anotaciones_posteriores){
+    $conexion = Conecta();
+    $complet = mysqli_query($conexion, "UPDATE tareas SET estado='$estado',anotaciones_anteriores='$anotaciones_anteriores', anotaciones_posteriores='$anotaciones_posteriores' WHERE id='$id'") or die ('Error orden de completar tarea');
+    return "Tarea $id completada correctamente";
+    
+}
+function eliminarTarea($id){
+    $conexion= Conecta();
+    $del= mysqli_query($conexion, "DELETE FROM tareas WHERE id='$id'") or die('Error orden eliminar tarea');
+    return "Tarea $id eliminada correctamente";
 }
 function ListaTareas() {
     $conexion = Conecta();
@@ -62,10 +73,5 @@ function idUltimoRegistroTarea() {
     return $id;
 }
 
-function actualizarTarea($id, $estado, $anotaciones_anteriores, $anotaciones_posteriores) {
-    $conexion = Conecta();
-    $actualizacion = mysqli_query($conexion, "UPDATE tareas SET estado='$estado', anotaciones_anteriores='$anotaciones_anteriores', anotaciones_posteriores='$anotaciones_posteriores' WHERE id='$id'");
-    return 'Actualización realizada correctamente';
-}
 
 

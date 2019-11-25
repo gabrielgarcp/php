@@ -6,9 +6,11 @@ session_start();
 if (isset($_SESSION['admin'])) {
     if ($_SESSION['admin'] == 'si') {
         ?>
-        <!DOCTYPE html>
         <html>
-            <head><meta charset="UTF-8"></head>
+            <head>
+                <meta charset="UTF-8">
+                <title>Editar tarea</title>
+            </head>
             <body>
                 <form action="../../controllers/editarTarea.php" method="POST">
                     <p><label> Id: <input type="text" name="id" value="<?= $datosTarea['id'] ?>" size="1" readonly /></label></p>
@@ -50,4 +52,3 @@ if (isset($_SESSION['admin'])) {
 } else {
     header('Location: ../../index.php');
 }
-

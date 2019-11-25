@@ -11,9 +11,9 @@ if (isset($_SESSION['admin'])) {
             <body>
                 <h1>Bienvenido a Paco's garden s.l</h1>
                 <h3>¿Qué desea hacer?</h3>
-                <button onclick="location.href = '../../controllers/ListarTareas.php'">Listar tareas</button>
-                <button onclick="location.href = '../../controllers/CompletarTarea.php'"> Completar tarea </button>
-                <button onclick="location.href = '../../controllers/BuscarTarea.php'"> Buscar tarea </button>
+                <button onclick="location.href = '../Acciones/ListarTareas.php'">Listar tareas</button>
+                <button onclick="location.href = '../Acciones/CompletarTarea.php'"> Completar tarea </button>
+                <button onclick="location.href = '../Acciones/BuscarTarea.php'"> Buscar tarea </button>
             </body>
         </html>
         <?php
