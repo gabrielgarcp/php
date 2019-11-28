@@ -1,6 +1,10 @@
 <?php
-include '../models/funciones.php';
 
+if(!$_POST){
+     include '../views/EditarTarea.php';
+}
+else{
+    include '../models/funciones.php';
 if ($_POST['fecha_realizacion'] == "") {
     $fech_re = null;
 } else {
@@ -10,11 +14,6 @@ $result_editar = editarTarea($_POST['id'], $_POST['descripcion'], $_POST['person
 ?>
 <script type="text/javascript">
     alert("<?= $result_editar ?>");
-    window.location.href = "../views/Acciones/ListarTareas.php";
+    window.location.href = "Listar.php";
 </script>
-
-
-
-
-
-
+<?php }

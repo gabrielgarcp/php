@@ -23,13 +23,13 @@
 
                     if ($usuario->isAdmin($usuario->user)) {
                         session_start();
-                        $_SESSION['admin']='si';
-                        header('Location: ./views/MenuPrincipal/admin.php');
+                        $_SESSION['admin']=true;
+                        header('Location: views/menu.php');
                         
                     } else {
                         session_start();
-                        $_SESSION['admin']='no';
-                        header('Location: ./views/MenuPrincipal/operarios.php');
+                        $_SESSION['admin']=false;
+                        header('Location: views/menu.php');
                     }
                 } else {
                     print 'Contraseña incorrecta';

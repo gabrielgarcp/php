@@ -1,19 +1,21 @@
 <?php
 
 include 'Conexionbd.php';
-/* funciones */
 
+/*Funcion que crea una nueva tarea apartir de los parametros envia desde la vista de 'AnadirTarea'*/
 function nuevaTarea($id, $descripcion, $persona_contacto, $telefono_contacto, $correo, $direccion, $poblacion, $codigo_postal, $provincia, $estado, $fecha_creacion, $operario_encargado, $fecha_realizacion, $anotaciones_anteriores, $anotaciones_posteriores) {
     $conexion = Conecta();
     $nueva = mysqli_query($conexion, "INSERT INTO tareas VALUES ('$id','$descripcion','$persona_contacto','$telefono_contacto','$correo','$direccion','$poblacion','$codigo_postal','$provincia','$estado','$fecha_creacion','$operario_encargado','$fecha_realizacion','$anotaciones_anteriores','$anotaciones_posteriores')") or die('Error orden insertar tarea');
     return "Tarea añadida correctamenete";
 }
 
+/* Función que actualiza la tarea con los datos que se han modificado en la vista 'EditarTareas'*/
 function editarTarea($id, $descripcion, $persona_contacto, $telefono_contacto, $correo, $direccion, $poblacion, $codigo_postal, $provincia, $estado, $operario_encargado, $fecha_realizacion, $anotaciones_anteriores, $anotaciones_posteriores) {
     $conexion = Conecta();
     $edit = mysqli_query($conexion, "UPDATE tareas SET descripcion='$descripcion',persona_contacto='$persona_contacto',telefono_contacto='$telefono_contacto',correo='$correo',direccion='$direccion',poblacion='$poblacion',codigo_postal='$codigo_postal',provincia='$provincia',estado='$estado',operario_encargado='$operario_encargado',fecha_realizacion='$fecha_realizacion',anotaciones_anteriores='$anotaciones_anteriores',anotaciones_posteriores='$anotaciones_posteriores' WHERE id='$id'") or die ('Eroor orden editar tarea');
     return "Tarea $id actualizada correctamenete";
 }
+
 function completarTarea($id,$estado,$anotaciones_anteriores,$anotaciones_posteriores){
     $conexion = Conecta();
     $complet = mysqli_query($conexion, "UPDATE tareas SET estado='$estado',anotaciones_anteriores='$anotaciones_anteriores', anotaciones_posteriores='$anotaciones_posteriores' WHERE id='$id'") or die ('Error orden de completar tarea');
@@ -24,6 +26,15 @@ function eliminarTarea($id){
     $conexion= Conecta();
     $del= mysqli_query($conexion, "DELETE FROM tareas WHERE id='$id'") or die('Error orden eliminar tarea');
     return "Tarea $id eliminada correctamente";
+}
+function buscarTareas($parametro,$dato) {
+    $conexion = Conecta();
+    $busca_tarea = [];
+    $consulta = mysqli_query($conexion, "select * from tareas WHERE $parametro='$dato'");
+    while ($reg = mysqli_fetch_array($consulta)) {
+        $busca_tarea[] = $reg;
+    }
+    return $busca_tarea;
 }
 function ListaTareas() {
     $conexion = Conecta();

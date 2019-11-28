@@ -3,21 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/MenuPrincipal/operarios.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/Acciones/CompletarTarea.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/Acciones/AnadirTarea.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/completarTarea.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/AnadirTarea.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/menu.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/index.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/Acciones/ListarTareas.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/AnadirTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/EliminarTarea.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/CompletarTarea.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/CompletarTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/Listar.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/models/funciones.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/EditarTarea.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/anadirTarea.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/Acciones/EliminarTarea.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/menu.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/ListarTareas.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/EditarTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/datosTarea.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/MenuPrincipal/admin.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/Acciones/EditarTarea.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/EliminarTarea.php</file>
         </group>
     </open-files>
 </project-private>
