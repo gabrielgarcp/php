@@ -1,27 +1,21 @@
-<?php
-session_start();
-if (isset($_SESSION['admin'])) {
-        ?>
-        <html>
-            <head>
-                <meta charset="UTF-8">
-                <title>Inicio de sesión</title>
-            </head>
-            <body>
-                <h1>Bienvenido a Paco's garden s.l</h1>
-                <h3>¿Qué desea hacer?</h3>
-                <button onclick="location.href = '../controllers/Listar.php'">Listar tareas</button>
-                <?php 
-                if($_SESSION['admin']){?>
-                <button onclick="location.href = '../controllers/AnadirTarea.php'"> Añadir una tarea </button>
-                <button onclick="location.href = '../Acciones/BuscarTareas.php'"> Buscar tarea </button>
-                <?php }
-                else{ ?>
-                <button onclick="location.href = '../Acciones/BuscarTarea.php'"> Buscar tarea </button>
-                <?php }?>
-            </body>
-        </html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Inicio de sesión</title>
+    </head>
+    <body>
+        <h1>Bienvenido a Paco's garden s.l</h1>
+        <h3>¿Qué desea hacer?</h3>
         <?php
-} else {
-    header('Location: ../../index.php');
-}
+        session_start();
+        if ($_SESSION['admin']) {
+            ?>
+            <button onclick="location.href = 'Listar.php'">Listar tareas</button>
+            <button onclick="location.href = 'AnadirTarea.php'"> Añadir una tarea </button>
+        <?php
+        } else {
+            header('Location: Listar.php');
+        }
+        ?>
+    </body>
+</html>

@@ -1,5 +1,3 @@
 <?php
-if($_SESSION['admin']){
-    
-}
+include '../views/menu.php';
 
