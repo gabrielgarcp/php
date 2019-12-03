@@ -39,7 +39,7 @@ function buscarTareas($parametro,$dato) {
 function ListaTareas() {
     $conexion = Conecta();
     $lista_tareas = [];
-    $consulta = mysqli_query($conexion, "select * from tareas");
+    $consulta = mysqli_query($conexion, "select * from tareas ORDER BY fecha_creacion DESC");
     while ($reg = mysqli_fetch_array($consulta)) {
         $lista_tareas[] = $reg;
     }
@@ -84,5 +84,37 @@ function idUltimoRegistroTarea() {
     return $id;
 }
 
+function filtrardatos() {
+    $errores = [];
+    if (isset($_POST)) {
+        if (empty($_POST['descripcion'])) {
+            array_push($errores, "La descripción esta vacía.");
+        }
+        if (empty($_POST['persona_contacto'])) {
+            array_push($errores, "La persona de contacto esta vacía.");
+        }
+        if (empty($_POST['telefono_contacto'])) {
+            array_push($errores, "El teléfono es obligatorio.");
+        }
+        if (isset($_POST['codigo_postal'])) {
+            if (!filter_var($_POST['codigo_postal'], FILTER_VALIDATE_INT) && strlen($_POST['codigo_postal'] == 5)) {
+                array_push($errores, "Codigo postal invalido. Su formato es de 5 números.");
+            }
+        }
+        if (empty($_POST['correo'])) {
+            if (!filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL)) {
+                array_push($errores, "Email incorrecto");
+            }
+        }
+        if (isset($_POST['fecha_realización'])) {
+            $fecha_actual = strtotime(date("d-m-Y", time()));
+            $fecha_entrada = strtotime(date("d-m-Y", $_POST['fecha_realizacion']));
+            if ($_POST['fecha_realizacion'] > strtotime(date("d-m-Y", time()))) {
+                array_push($errores, "La fecha de realización debe ser posterior a la fecha actual.");
+            }
+        }
+        return $errores;
+    }
+}
 
 

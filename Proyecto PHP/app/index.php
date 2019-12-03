@@ -18,15 +18,13 @@
             include 'objects/users.php';
             $usuario = new User($_POST['user'], $_POST['pass']);
             if ($usuario->usuarioExiste($usuario->user)) {
-
                 if ($usuario->passOK($usuario->user, $usuario->pass)) {
-
+                    session_start();
+                    $_SESSION['usuario']=$usuario->user;
                     if ($usuario->isAdmin($usuario->user)) {
-                        session_start();
                         $_SESSION['admin'] = true;
                         header('Location: controllers/menu.php');
                     } else {
-                        session_start();
                         $_SESSION['admin'] = false;
                         header('Location: controllers/menu.php');
                     }

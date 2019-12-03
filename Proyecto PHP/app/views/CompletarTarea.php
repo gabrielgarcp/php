@@ -1,6 +1,5 @@
 <?php
-$id = $_GET['id'];
-$datosTarea = datos($id);
+
 ?>
 <html>
     <head>
@@ -13,9 +12,9 @@ $datosTarea = datos($id);
             <br>
             <fieldset>
                 <legend>Estado</legend>
-                <label><input type="radio" name="estado" value="P" <?php if ($datosTarea['estado'] == 'P') { ?>checked<?php } ?>/> Pendiente </label> <br>
-                <label><input type="radio" name="estado" value="R" <?php if ($datosTarea['estado'] == 'R') { ?>checked<?php } ?>/> Realizada</label> <br>
-                <label><input type="radio" name="estado" value="C" <?php if ($datosTarea['estado'] == 'C') { ?>checked<?php } ?>/> Cancelada</label>
+                <label><input type="radio" name="estado" value="P" /> Pendiente </label> <br>
+                <label><input type="radio" name="estado" value="R" checked /> Realizada</label> <br>
+                <label><input type="radio" name="estado" value="C" /> Cancelada</label>
             </fieldset>
             <br>
             <p><label> Anotaciones anteriores: <input type="text" name="anotaciones_anteriores" value="<?= $datosTarea['anotaciones_anteriores'] ?>"/></label></p>

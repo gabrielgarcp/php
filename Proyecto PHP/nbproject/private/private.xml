@@ -5,19 +5,19 @@
         <group>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/AnadirTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/menu.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/index.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/AnadirTarea.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/index.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/EliminarTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/CompletarTarea.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/CompletarTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/Listar.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/CompletarTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/models/funciones.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/EditarTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/menu.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/ListarTareas.php</file>
+            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/usuario.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/EditarTarea.php</file>
             <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/controllers/datosTarea.php</file>
-            <file>file:/C:/xampp/htdocs/DWES/Proyecto%20PHP/app/views/EliminarTarea.php</file>
         </group>
     </open-files>
 </project-private>

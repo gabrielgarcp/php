@@ -1,10 +1,11 @@
 <?php
+session_start();
 if (isset($_SESSION['admin'])) {
     if ($_SESSION['admin']) {
         if (!$_POST) {
+            include '../views/usuario.php';
             include '../views/EliminarTarea.php';
         } else {
-
             include '../models/funciones.php';
             $id = $_POST['id'];
             if (isset($_POST['bs'])) {
@@ -22,10 +23,9 @@ if (isset($_SESSION['admin'])) {
         ?>
         <script type="text/javascript">
             alert("No tienes permisos para eliminar una tarea");
-            window.location.href = "Listar.php";
+            window.location.href = "../index.php";
         </script>
         <?php
-        header('Location: menu.php');
     }
 } else {
     ?>
