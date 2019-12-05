@@ -36,10 +36,15 @@ function buscarTareas($parametro,$dato) {
     }
     return $busca_tarea;
 }
-function ListaTareas() {
+function numTareas(){
+    $conexion = Conecta();
+    $consulta= mysqli_query($conexion, "select * from tareas");
+    return mysqli_num_rows($consulta);
+}
+function ListaTareas($inicio,$t_x_p) {
     $conexion = Conecta();
     $lista_tareas = [];
-    $consulta = mysqli_query($conexion, "select * from tareas ORDER BY fecha_creacion DESC");
+    $consulta = mysqli_query($conexion, "select * from tareas ORDER BY fecha_creacion DESC LIMIT $inicio,$t_x_p");
     while ($reg = mysqli_fetch_array($consulta)) {
         $lista_tareas[] = $reg;
     }

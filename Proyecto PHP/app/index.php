@@ -1,6 +1,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">        
         <title>Inicio de sesión</title>
     </head>
     <body>
@@ -20,7 +26,7 @@
             if ($usuario->usuarioExiste($usuario->user)) {
                 if ($usuario->passOK($usuario->user, $usuario->pass)) {
                     session_start();
-                    $_SESSION['usuario']=$usuario->user;
+                    $_SESSION['usuario'] = strtolower($usuario->user);
                     if ($usuario->isAdmin($usuario->user)) {
                         $_SESSION['admin'] = true;
                         header('Location: controllers/menu.php');
@@ -29,10 +35,20 @@
                         header('Location: controllers/menu.php');
                     }
                 } else {
-                    print 'Contraseña incorrecta';
+                    ?>
+                    <script type="text/javascript">
+                        alert("Contraseña incorrecta");
+                        window.location.href = "index.php";
+                    </script>
+                    <?php
                 }
             } else {
-                print 'No existe';
+                ?>
+                <script type="text/javascript">
+                    alert("Este usuario no existe");
+                    window.location.href = "index.php";
+                </script>
+                <?php
             }
         }
         ?>
