@@ -6,7 +6,7 @@ if (isset($_SESSION['admin'])) {
     // Comprobar si admin es falso
     if (!$_SESSION['admin']) {
         // Incluir las funciones
-        include '../models/funciones.php';
+        include __DIR__.'/../models/funciones.php';
         //Comprobaos si no han enviado nada
         if (!$_POST) {
             //Incliuimos el controlador de datos de una tarea         
@@ -16,8 +16,8 @@ if (isset($_SESSION['admin'])) {
             //Guardamos en una variable los datos de la tarea de la variable id
             $datosTarea = datos($id);
             // Incluimos las vistas de usuario y el formulario de completar tarea
-            include '../views/usuario.php';
-            include '../views/CompletarTarea.php';
+            include __DIR__.'/../views/usuario.php';
+            include __DIR__.'/../views/CompletarTarea.php';
         } else {
             //Si se ha enviado algo se lo pasamos a la funcion de completar 
             //tarea y el valor resultante lo almacenamos en una variable

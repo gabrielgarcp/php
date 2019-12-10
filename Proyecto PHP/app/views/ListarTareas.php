@@ -10,19 +10,9 @@
         <title>Inicio de sesión</title>
     </head>
     <body> 
-        <!-- Realinar la busquea con tres campos
-        <form method="POST" style="float:right"> 
-            <label> Buscar: <select name="campo">
-                    <option value="poblacion"> Población</option>
-                    <option value="provincia"> Provincia </option>
-                    <option value="estado"> Estado </option>
-                    <option value="fecha_creacion"> Fecha de creación </option>
-                    <option value="operario"> Operrio encargado </option>
-                </select>
-                <input type="text" name="dato"/></label>
-            <input type="submit" name="buscar" value="Buscar">
-        </form>
-        --->
+        <button type="button" onclick="window.location = '../controllers/BuscarTareas.php'"> Buscar </button>
+        <button onclick="location.href = 'AnadirTarea.php'"> Añadir una tarea </button>
+
     </p>
     <table class="table" style="text-align: center;font-size: 12px">
         <thead class="thead-dark">
@@ -67,7 +57,6 @@
                     <td> <?= $reg['anotaciones_posteriores'] ?> </td>
                     <td>
                         <?php
-                        session_start();
                         if ($_SESSION['admin']) {
                             ?>
                             <button type="button" onclick="window.location = 'EditarTarea.php?id=<?= $reg['id'] ?>'">
@@ -89,15 +78,18 @@
         endforeach;
         ?>
     </table>
+
     <div class="container my-5" >
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-                <li class="page-item <?php if ($_GET['pagina'] == 1) { ?> disabled <?php } ?>"><a class="page-link" href="./Listar.php?pagina=<?= $_GET['pagina'] - 1 ?>">Anterior</a></li>
-                <?php for ($i = 1; $i <= $paginas; $i++) { ?>
+                <li class="page-item <?php if ($_GET['pagina'] == 1) { ?> disabled <?php } ?>"><a class="page-link" href="./Listar.php?pagina=1 ?>"><<</a></li>
+                <li class="page-item <?php if ($_GET['pagina'] == 1) { ?> disabled <?php } ?>"><a class="page-link" href="./Listar.php?pagina=<?= $_GET['pagina'] - 1 ?>"><</a></li>
+                <?php for ($i = 1; $i <= $paginacion['paginas']; $i++) { ?>
                     <li class="page-item <?php if ($_GET['pagina'] == $i) { ?> active <?php } ?>" active><a class="page-link"  href="./Listar.php?pagina=<?= $i ?>"><?= $i ?></a></li>
                 <?php }
                 ?>
-                <li class="page-item <?php if ($_GET['pagina'] == $paginas) { ?> disabled <?php } ?>"><a class="page-link" href="./Listar.php?pagina=<?= $_GET['pagina'] + 1 ?>">Siguiente</a></li>
+                <li class="page-item <?php if ($_GET['pagina'] == $paginacion['paginas']) { ?> disabled <?php } ?>"><a class="page-link" href="./Listar.php?pagina=<?= $_GET['pagina'] + 1 ?>">></a></li>
+                <li class="page-item <?php if ($_GET['pagina'] == $paginacion['paginas']) { ?> disabled <?php } ?>"><a class="page-link" href="./Listar.php?pagina=<?= $paginas ?>">>></a></li>
             </ul>
         </nav>
     </div>

@@ -10,8 +10,8 @@ if (isset($_SESSION['admin'])) {
         //Comprobar si no hemos pulsado el boton 'Añadir' del formulario de añadir
         if (!isset($_POST['Anadir'])) {
             //Incluir las vistas del usuario y formulario añadir tarea
-            include '../views/usuario.php';
-            include '../views/AnadirTarea.php';
+            include __DIR__.'/../views/usuario.php';
+            include __DIR__.'/../views/AnadirTarea.php';
         } else {
             //Si hemos pulsado el boton de Añadir, guardmos los valores enviados y filtramos los datos 
             $campos = $_POST;
@@ -37,7 +37,7 @@ if (isset($_SESSION['admin'])) {
                 <?php
             } else {
                 // Si hay errores volvemos a mostrar el formulario
-                include '../views/AnadirTarea.php';
+                include __DIR__.'/../views/AnadirTarea.php';
             }
         }
         //Si la variable admin es falsa, el usuario no tiene permiso 

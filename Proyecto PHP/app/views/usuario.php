@@ -10,4 +10,5 @@
     <?php }
     ?>
         <?= $_SESSION['usuario']?>
+        <a href="../index.php"  onclick="<?php session_abort();?>">Cerrar sesión </a>
 </p>

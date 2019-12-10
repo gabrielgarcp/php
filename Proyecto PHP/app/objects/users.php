@@ -1,15 +1,15 @@
 <?php
-
+//Clase usuario
 class User {
 
     public $user;
     public $pass;
-
+//Creamos un usuario con el usuario y contraseña
     public function __construct($user, $pass) {
         $this->user = $user;
         $this->pass = $pass;
     }
-
+//Funcion que comprueba si el usuario existe
     public function usuarioExiste($nombreusuario) {
         $conexion = Conecta();
         $consulta = mysqli_query($conexion, "select * from users where user='$nombreusuario'");
@@ -20,7 +20,7 @@ class User {
                 return true;
         }
     }
-
+//Función que comprueba si la contraseña es correcta
     public function passOK($nombreusuario, $contraseña) {
         $conexion = Conecta();
         $consulta = mysqli_query($conexion, "select * from users where user='$nombreusuario'");
@@ -36,7 +36,7 @@ class User {
             }
         }
     }
-
+//Funcion que devuelve si es administrador el usuario o no
     public function isAdmin($nombreusuario) {
         $conexion = Conecta();
         $consulta = mysqli_query($conexion, "SELECT * FROM users WHERE user='$nombreusuario'");

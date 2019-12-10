@@ -29,10 +29,10 @@
                     $_SESSION['usuario'] = strtolower($usuario->user);
                     if ($usuario->isAdmin($usuario->user)) {
                         $_SESSION['admin'] = true;
-                        header('Location: controllers/menu.php');
+                        header('Location: controllers/Listar.php');
                     } else {
                         $_SESSION['admin'] = false;
-                        header('Location: controllers/menu.php');
+                        header('Location: controllers/Listar.php');
                     }
                 } else {
                     ?>
